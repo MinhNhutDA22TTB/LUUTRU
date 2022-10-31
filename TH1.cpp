@@ -58,14 +58,6 @@ int main()
 	}
 	KTNT(n);
 	TONGNT(n);
-	
-	
-	
-	
-	
-	
-	
-	
 	tinhgiaithua(h);
 	tinhtong(a,b);
 	tinhdtHCN(c,d);
@@ -75,14 +67,14 @@ int main()
 
 
 
-void hello()
+void hello()//in ra dong chu hello world!
 {
 	printf("\n\nHello World!");
 }
 
 
 
-long tinhgiaithua(int n)
+long tinhgiaithua(int n)//tinh giai thua cua so nguyen duong n
 {
 	int i,x=1;
 		if (n==0) return 1;
@@ -96,7 +88,7 @@ long tinhgiaithua(int n)
 }
 
 
-int tinhtong (int a, int b)
+int tinhtong (int a, int b)// tinh tong hai so nguyen a va b
 {
 	int tong=0;
 	tong=a+b;
@@ -104,14 +96,14 @@ int tinhtong (int a, int b)
 }
 
 
- int tinhdtHCN (int a, int b)
+ int tinhdtHCN (int a, int b)// tinh S hinh chu nhat
  {
  int dt=1;
  dt=a*b;
  return dt;
  }
  
- int timUSCLN (int a, int b)
+ int timUSCLN (int a, int b)//tim USCLN cua hai so nguyen
 {
 	int x;
 	if (a==0 || b==0) x=a+b;
@@ -125,7 +117,7 @@ int tinhtong (int a, int b)
 }
 
 
-int kiemtraSNT (int a)
+int kiemtraSNT (int a)//kiem tra so nguyen to
 {
 	int i,dem=0;
 	for(i=2;i<=a;i++)
@@ -136,7 +128,7 @@ int kiemtraSNT (int a)
 }
 
 
-void hoanvi(int *a, int *b)
+void hoanvi(int *a, int *b)//hoan doi gia tri A va B
 {
 	int tam=0;
 	tam=*a;
@@ -144,14 +136,14 @@ void hoanvi(int *a, int *b)
 	*b=tam;
 }
 
-void KTNT (int n)
+void KTNT (int n)// kiem tra so n co phai SNT
 {
 	if (kiemtraSNT(n)==1) printf("\nSo nguyen duong n la so nguyen to");
 	else                  printf("\nSo nguyen duong n khong la so nguyen to");
 }
 
 
-void TONGNT(int n)
+void TONGNT(int n)//Tinh tong cac so nguyen to tu 1 den n
 {
     int i,tong=0;
 	for (i=1;i<=n;i++)
