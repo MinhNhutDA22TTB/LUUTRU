@@ -69,8 +69,6 @@ int main()
 	tinhgiaithua(h);
 	tinhtong(a,b);
 	tinhdtHCN(c,d);
-	
-	scanf("%d",&n);
 	return 0;
 }
 
