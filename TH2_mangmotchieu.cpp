@@ -1,16 +1,15 @@
-#include <stdio.h>;
+#include <stdio.h>
 int A[100];
-void nhapmang ( int A[100], int n);
-void xuatmang ( int A[100], int n);
-void max (int A[100],int n);
-void tich (int A[100],int n);
-void dsnt (int A[100],int n);
+void nhapmang  ( int A[100], int n);
+void xuatmang  ( int A[100], int n);
+void max       (int A[100],int n);
+void tich      (int A[100],int n);
+void dsnt      (int A[100],int n);
 int kiemtraSNT (int a);
-void timx (int A[100],int n,int x);
-void sapxep (int A[100],int n);
-void chenx(int A[100],int n, int x);
-void Xoa1(int x[100], int *n, int vitri);
-void Xoa2(int A[100],int n);
+void timx      (int A[100],int n,int x);
+void sapxep    (int A[100],int n);
+void chenx     (int A[100],int n, int x);
+void xoa       (int A[100],int n);
 
 int main()
 
@@ -31,7 +30,8 @@ int main()
 	timx(A,n,x);
 	sapxep(A,n);
 	chenx(A,n,x);
-    Xoa2(A,n);
+	n++;
+    xoa(A,n);
 }
 
 
@@ -153,33 +153,42 @@ void chenx(int A[100],int n, int x)//chen gia tri cua x vao mang
      }
 }
 
-void Xoa1(int x[100], int *n, int vitri)//xoa cac phan tu tai vi tri i cu the
+void xoa(int A[100],int n)//xoa cac phan tu co gia tri bang k
 {
-	for(int i=vitri;i<*n-1;i++)
-	{
-		x[i]=x[i+1];
-	}
-	*n--; 
-}
-
-void Xoa2(int A[100],int n)//xoa cac phan tu co gia tri bang k
-{
-	int k;
+	int k,dem=0;
 	printf("\n\nNhap k="); scanf("%d",&k);
-	for (int i=0;i<n;i++)
+	for(int f=0;f<n;f++)
 	{
-	    if (k==A[i]) Xoa1(A,&n,i);//XÂC DINH VI TRI CAN XOA
+		for(int i=0;i<n;i++)
+        {
+	       if(A[i]==k)
+	       {
+	   	     dem++;
+	         for(int j=i;j<n-1;j++)
+	         {
+		        A[j]=A[j+1];
+		     }
+		     n--;
+	      }
+	   }
 	}
-	printf("\n\nMang A sau khi xoa cac phan tu co gia tri bang k:");
-	for (int i=0;i<n;i++)
+	if (dem==0)
 	{
-		printf("\n\nA[%d]=%d",i,A[i]);	
+	   printf("\n\nKhong co phan tu nao trong mang A co gia tri bang k, mang A khong thay doi !");
+	   printf("\n\nMang A :");
+	   for(int i=0;i<n;i++)
+	   {
+	      printf("\n\nA[%d] = %d",i,A[i]);
+	   }
 	}
+	else
+	{
+	   printf("\n\nMang A sau khi xoa cac phan tu co gia tri bang k :");
+	   for(int i=0;i<n;i++)
+	   {
+	      printf("\n\nA[%d] = %d",i,A[i]);
+	   }
+	}
+	
 }
-
-
-
-
-
-
-
+	
