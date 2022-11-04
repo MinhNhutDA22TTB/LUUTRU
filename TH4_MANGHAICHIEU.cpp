@@ -9,6 +9,9 @@ void snt        (int a[100][100],int m,int n);
 void timx       (int a[100][100],int m, int n);
 void yenngua    (int a[100][100],int m, int n);
 void sx         (int a[100][100],int m,int n);
+void tong       (int a[100][100],int m,int n);
+void chan       (int a[100][100],int m,int n);
+void le         (int a[100][100],int m,int n);
 int main()
 {
 	int a[100][100];//Khai bao ma tran a
@@ -32,6 +35,9 @@ int main()
     timx(a,m,n);//6
     yenngua(a,m,n);//7
     sx(a,m,n);//8
+    tong(a,m,n);//9
+    chan(a,m,n);//10
+    le(a,m,n);//11
 }
 
 
@@ -183,7 +189,7 @@ void yenngua (int a[100][100],int m, int n)//tim gia tri la yen ngua
 }
 
 
-void sx (int a[100][100],int m,int n)
+void sx (int a[100][100],int m,int n)//Sap xep ma tran a tang dan tu tren xuong & tu trai qua phai
 {
 	int tam,tamm;
     for(int i=0;i<n;i++)//sap xep theo thu tu tang dan tu tren xuong
@@ -228,6 +234,66 @@ void sx (int a[100][100],int m,int n)
 		printf("\n\n");
 	 }  
 	 
+}
+
+
+void tong(int a[100][100],int m,int n)//Tinh tong cac phan tu nam tren duong cheo chinh
+{
+	 int x=0;
+	 for(int i=0;i<m;i++)
+	 {
+	 	for(int j=0;j<n;j++)
+	 	{  
+		   if (i==j) x=x+a[i][j]; 		
+	 	}
+	 }
+	 printf("\n\nTong cac phan tu nam tren duong cheo chinh cua ma tran a = %d",x);
+}
+
+
+
+void chan(int a[100][100],int m,int n)//Dem cac so chan nam trong tam ggiac duoi cua duong cheo chinh
+{
+	int dem=0;
+	for(int i=0;i<m;i++)
+	{
+	 	for(int j=0;j<n;j++)
+	 	{
+		   if (i==j) 
+		   {
+		   	  for(int k=j+1;k<n;k++)
+		   	  {
+		   	  	 if (a[i][k]%2==0) dem++;
+		   	  }
+		   }
+		}
+    }
+    if (dem==0) printf("\n\nKhong co phan tu nao la so chan nam trong tam giac tren cua duong cheo chinh cua ma tran a !");
+    else        printf("\n\nCo %d phan tu la so chan nam trong tam giac tren cua duong cheo chinh cua ma tran a ma khong ke duong cheo chinh !",dem);
+}
+
+
+void le(int a[100][100],int m,int n)//In ra cac so le trong tam giac tren cua duong cheo phu
+{
+	printf("\n\nCac so le nam trong tam giac duoi cua duong cheo phu :");
+	printf("\n\n");
+	for(int i=0;i<m;i++)
+	{
+	 	for(int j=0;j<n;j++)
+	 	{
+		   if (j+i==n-1)
+		   {
+		       for(int k=j;k<n;k++)
+		   	   {
+		   	   	  if (a[i][k]%2==1) 
+		   	   	  {
+		   	   	  	 printf("  %d  ",a[i][k]);
+		   	   	  }
+		   	   	  
+			   }
+		   }
+	    }
+    }
 }
 
 
