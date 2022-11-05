@@ -1,7 +1,7 @@
 #include <stdio.h>
 int A[100];
-void nhapmang  ( int A[100], int n);
-void xuatmang  ( int A[100], int n);
+void nhapmang  (int A[100],int n);
+void xuatmang  (int A[100],int n);
 void max       (int A[100],int n);
 void tich      (int A[100],int n);
 void dsnt      (int A[100],int n);
