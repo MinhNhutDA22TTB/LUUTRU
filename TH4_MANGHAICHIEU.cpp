@@ -282,6 +282,7 @@ void le(int a[100][100],int m,int n)//In ra cac so le trong tam giac tren cua du
 {
 	printf("\n\nCac so le nam trong tam giac duoi cua duong cheo phu :");
 	printf("\n\n");
+	int dem=0;
 	for(int i=0;i<m;i++)
 	{
 	 	for(int j=0;j<n;j++)
@@ -292,6 +293,7 @@ void le(int a[100][100],int m,int n)//In ra cac so le trong tam giac tren cua du
 		   	   {
 		   	   	  if (a[i][k]%2==1) 
 		   	   	  {
+		   	   	  	 dem++;
 		   	   	  	 printf("  %d  ",a[i][k]);
 		   	   	  }
 		   	   	  
@@ -299,6 +301,7 @@ void le(int a[100][100],int m,int n)//In ra cac so le trong tam giac tren cua du
 		   }
 	    }
     }
+    if (dem==0) printf("Khong co so le nao nam trong tam giac tren cua duong cheo phu trong ma tran a !");
 }
 
 
