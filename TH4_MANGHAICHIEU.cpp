@@ -12,10 +12,14 @@ void sx         (int a[100][100],int m,int n);
 void tong       (int a[100][100],int m,int n);
 void chan       (int a[100][100],int m,int n);
 void le         (int a[100][100],int m,int n);
+void tich       (int A[100][100],int B[100][100]);
+
 int main()
 {
 	int a[100][100];//Khai bao ma tran a
-	int m,n; //1. Nhap so dong so cot
+	int A[100][100];//Khai bao ma tran A
+	int B[100][100];//Khai bao ma tran B
+	int m,n; //Nhap so dong so cot
     printf("Nhap so dong cho mang: "); scanf("%d",&m);
     while (m<0||m>100)
     {
@@ -38,10 +42,11 @@ int main()
     tong(a,m,n);//9
     chan(a,m,n);//10
     le(a,m,n);//11
+    tich(A,B);//12
 }
 
 
-void nhap (int a[100][100], int m, int n)//2.Nhap ma tran a
+void nhap (int a[100][100], int m, int n)//Nhap ma tran a
 {
      for(int i=0;i<m;i++)
      {
@@ -53,7 +58,7 @@ void nhap (int a[100][100], int m, int n)//2.Nhap ma tran a
 }
 
 
-void xuat (int a[100][100], int m, int n)//3.Xuat ma tran a
+void xuat (int a[100][100], int m, int n)//Xuat ma tran a
 {
      for(int i=0;i<m;i++)
      {
@@ -67,7 +72,7 @@ void xuat (int a[100][100], int m, int n)//3.Xuat ma tran a
 }
 
 
-void max (int a[100][100],int m,int n)//4.1 Tim gia tri max trong a
+void max (int a[100][100],int m,int n)// Tim gia tri max trong a
 {
     int tam=0,x,y;
     for(int i=0;i<m;i++)
@@ -86,7 +91,7 @@ void max (int a[100][100],int m,int n)//4.1 Tim gia tri max trong a
 }
 
 
-void min (int a[100][100],int m,int n)//4.2 Tim gia tri min trong a
+void min (int a[100][100],int m,int n)// Tim gia tri min trong a
 {
     int tam,x,y;
     tam=a[0][0];
@@ -117,7 +122,7 @@ int dem(int n)// thu xem gia tri cua a co phai so nguyen to
 }
 
 
-void snt (int a[100][100],int m,int n)//5. Dem va tinh tong so nguyen to
+void snt (int a[100][100],int m,int n)//Dem va tinh tong so nguyen to
 {
      int x=0,tong=0;
      for(int i=0;i<m;i++)
@@ -294,6 +299,62 @@ void le(int a[100][100],int m,int n)//In ra cac so le trong tam giac tren cua du
 		   }
 	    }
     }
+}
+
+
+
+void tich(int A[100][100],int B[100][100])//Nhap hai ma tran A va B. Tinh tong va tich hai ma tran
+{
+   	 printf("\n\nXay Dung ma tran A va B :");
+	 int m,n,tich=1,tong=0;
+	 printf("\n\nNhap so cot cho  ma tran A va B = "); scanf("%d",&m);
+	 printf("\n\nNhap so dong cho  ma tran A va B = "); scanf("%d",&n);
+	 printf("\n\nXay Dung ma tran A:");
+	 for(int i=0;i<m;i++)
+	 {
+	 	for(int j=0;j<n;j++)
+	 	{
+	 	   	printf("\n\nA[%d][%d]=",i,j); scanf("%d",&A[i][j]);
+		} 
+	 }
+	 printf("\n\nXay Dung ma tran B:");
+	 for(int i=0;i<m;i++)
+	 {
+	 	for(int j=0;j<n;j++)
+	 	{
+	 	   	printf("\n\nB[%d][%d]=",i,j); scanf("%d",&B[i][j]);
+		} 
+	 }
+	 printf("\n\nMa tran A:\n\n");
+ 	 for(int i=0;i<m;i++)
+	 {
+	 	for(int j=0;j<n;j++)
+	 	{
+	 	   	printf(" %d ",A[i][j]);
+		}
+		printf("\n\n");
+     }
+	 printf("\n\nMa tran B:\n\n");
+ 	 for(int i=0;i<m;i++)
+	 {
+	 	for(int j=0;j<n;j++)
+	 	{
+	 	   	printf(" %d ",B[i][j]);
+		} 
+		printf("\n\n");
+     }
+	 
+	 for(int i=0;i<m;i++)
+	 {
+	 	for(int j=0;j<n;j++)
+	 	{
+	 	   tong=tong+A[i][j]+B[i][j];
+	 	   tich=tich*A[i][j]*B[i][j];
+	 	}
+	 }
+	 printf("\n\nTong cac phan tu cua ma tran A va B = %d",tong);
+     printf("\n\nTich cac phan tu cua ma tran A va B = %d",tich);
+
 }
 
 
