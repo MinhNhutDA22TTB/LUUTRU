@@ -14,8 +14,7 @@ int main()
 	char S1[50], S2[50];
 	nhap(S1,S2);//1
 	xuat(S1,S2);//2
-	dem(S1,S2);
-	
+	dem(S1,S2);//3
 }
 
 
@@ -24,7 +23,6 @@ void nhap(char S1[50], char S2[50])//1
 	 printf("Nhap chuoi S1 :\n\n"); gets(S1);
 	 printf("\n\n");
 	 printf("Nhap chuoi S2 :\n\n"); gets(S2);
-
 }
 
 
@@ -120,56 +118,30 @@ void xuat(char S1[50], char S2[50])//2
 }
 
 
-void dem(char S1[50], char S2[50])
+void dem(char S1[50], char S2[50])//3
 {
-	 char Sphu[50];
-	 int dem1=0;
-	 int dem2=0;
+	 strlwr(S1);
+	 strlwr(S2);
+	 int check=0;
+	 int dem=0;
 	 if (strlen(S1)<strlen(S2)) printf("\n\nChuoi S2 khong xuat hien trong chuoi S1");
 	 else
 	 {
-	 	for (int i=0;i<strlen(S1)-strlen(S2);i++)
+	 	for (int i=0;i<strlen(S1);i++)
 	 	{
 	 		if (S2[0]==S1[i])
 	 		{
-	 		   for (int j=i;j<strlen(S1);j++)
+	 		   for (int j=0;j<strlen(S2);j++)
 	 		   {
-	 		   	   Sphu[j-i]=S1[j];
+	 		   	   if (S2[j]!=S1[j+i])
+	 		   	   {
+					  check++;
+				   }
 	 		   }
-	 		   
-	 		   
-	 		   
-	 		   for (int k=0;k<strlen(Sphu);k++)
-	 		   {
-	 		   	   if (S2[k]!=Sphu[k]) dem1++;
-	 		   }
-	 		   if (dem1==0) dem2++;
-	 		   dem1=0;
-	 		   fflush(stdin);
-	 		   
+	 		   if (check==0) dem++;
+	 		   check=0;
 	 		}
-	 		
 	 	}
-	 	
-	 	printf("\n\nSo lan xuat hien cua chuoi S2 trong chuoi S1 = %d",dem2);
+	 	printf("\n\nSo lan xuat hien cua chuoi S2 trong chuoi S1 = %d",dem);
 	 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
