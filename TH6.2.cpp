@@ -40,9 +40,6 @@ int main()
 		 printf("**           5.Tim kiem SV theo MSSV           **\n");
 		 printf("**           0.Thoat                           **\n");
          printf("*************************************************\n");
-	}
-	
-	
 	printf("\n       \t\t AN PHIM DE CHON :     ");
 	scanf("%d",&key);
 	switch(key)
@@ -65,11 +62,14 @@ int main()
 		  case 3:
 		  	printf("\nBam phim bat ky de tiep tuc !");
 		  	Sapxep(a,n);
+		  	XuatsvN(a,n);
 		  	getch();
 		    break;
 		  case 4:
 		  	printf("\nBam phim bat ky de tiep tuc !");
 		  	INGX(a,n);
+		    XuatsvN(a,n);
+		    getch();
             break;
 		  case 5:
 		  	printf("\nBam phim bat ky de tiep tuc !");
@@ -84,6 +84,7 @@ int main()
 		  	getch();
 		  	break;
 		  	
+	}
 	}
 }
 
