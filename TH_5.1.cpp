@@ -2,6 +2,7 @@
 #include <string.h>
 #include <conio.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 void inhoa     (char S[100]);
 void nhap      (char S1[50], char S2[50]);
@@ -18,7 +19,6 @@ void dao       (char S1[50]);
 int main()
 {
 	char S1[50], S2[50], S3[100];
-	int key;
 	nhap(S1,S2);//1.1
 	xuat(S1,S2);//1.2
 	dem(S1,S2);//1.3
@@ -27,68 +27,9 @@ int main()
 	noichuoi(S1,S2,S3);//1.6
 	dx(S1);//1.7
 	dao(S1);//1.8
-	
-	
-   while(true)
-   {
-        system("cls");
-        printf("************************************\n");
-		printf("**      THAO TAC TREN CHUOI       **\n");
-		printf("**   1.Nhap va chuan hoa chuoi    **\n");
-		printf("** 	 2.Dem so tu trong chuoi      **\n");
-		printf("**	 3.Ghep chuoi 				  **\n");
-		printf("** 	 4.Kiem tra doi xung          **\n");
-		printf("**	 5.In chuoi dao nguoc         **\n");
-		printf("**   0.Thoat 		      	      **\n");
-		printf("************************************\n");
-		fflush(stdin);
-		printf("\n \t\t   AN PHIM CHON: ");
-		scanf("%d",&key);
-		switch(key)
-        {
-           	  case 1:
-					fflush(stdin);
-//goi ham de thuc hien cong viec tuong ung
-			  		printf("\nBam phim bat ky de tiep tuc!");
-			  		getch();
-			  		break;
-			  case 2:
-//goi ham thuc de hien cong viec tuong ung
-					printf("\nBam phim bat ky de tiep tuc!");
-					getch();
-					break;
-			  case 3:
-					printf("\nBam phim bat ky de tiep tuc!");
-//goi ham thuc de hien cong viec tuong ung
-					getch();
-					break;
-
-		      case 4:
-					printf("\nBam phim bat ky de tiep tuc!");
-//goi ham thuc de hien cong viec tuong ung
-					break;
-			  case 5:
-					printf("\nBam phim bat ky de tiep tuc!");
-//goi ham thuc de hien cong viec tuong ung
-					getch();
-					break;
-			  case 0:
-					exit(1);
-					default:
-					printf("\nKhong co chuc nang nay!");
-					printf("\nBam phim bat ky de tiep tuc!");
-					getch();
-					break;
-		}
-   }
+	gets(S3);
 }
 	
-	
-	
-	gets(S1);
-}
-
-
 void nhap(char S1[50], char S2[50])//1
 {
 	 printf("Nhap chuoi S1 :\n\n"); gets(S1);
