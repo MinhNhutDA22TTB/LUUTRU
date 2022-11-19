@@ -77,12 +77,19 @@ void tich(int *a, int n)//5.Tinh tich cac gia tri trong mang
 int snt(int a)
 {
 	int check=1;
-	for (int i=2;i<a;i++)
+	if (a<2)
 	{
-		if (a%i==0 && a!=2) 
+		check=0;
+	}
+	else
+	{
+		for (int i=2;i<a;i++)
 		{
-		   check=0;
-		   break;	
+			if (a%i==0 && a!=2) 
+			{
+		   	   check=0;
+		  	   break;	
+			}
 		}
 	}
 	return check;
@@ -130,17 +137,17 @@ void swap(int *x, int *y)
 }
 void sx(int *a, int n)//8.Sap xep mang tu be den lon
 {
+	int tam;
      for (int i=0;i<n;i++)
 	 {
-	 	 for (int j=i+1;j<n-1;j++)
+	 	 for (int j=i+1;j<n;j++)
 	 	 {
 	 	 	 if (*(a+i)>*(a+j))
 	 	 	 {
-	 	 		swap((a+i),(a+j));
+	 			swap(a+i,a+j);
 	 	 	 }	 
 	 	 }
 	 }
-
 	 printf("\n\nMang A sau khi sap xep :\n\n");
 	 for (int i=0;i<n;i++)
 	 {
