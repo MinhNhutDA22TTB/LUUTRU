@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 void inhoa     (char S[100]);
-void nhap      (char S1[50]);
+void nhap      (char S[50]);
 void xuat      (char S1[50]);
 void demtu     (char S1[50]);
 void noichuoi  (char S1[50], char S2[50], char S3[100]);
@@ -24,17 +24,17 @@ int main()
         printf("************************************\n");
 		printf("**      THAO TAC TREN CHUOI       **\n");
 		printf("**   1.Nhap va chuan hoa chuoi    **\n");
-		printf("** 	 2.Dem so tu trong chuoi      **\n");
-		printf("**	 3.Ghep chuoi 				  **\n");
-		printf("** 	 4.Kiem tra doi xung          **\n");
-		printf("**	 5.In chuoi dao nguoc         **\n");
-		printf("**   0.Thoat 		      	      **\n");
+		printf("**   2.Dem so tu trong chuoi      **\n");
+		printf("**   3.Ghep chuoi                 **\n");
+		printf("**   4.Kiem tra doi xung          **\n");
+		printf("**   5.In chuoi dao nguoc         **\n");
+		printf("**   0.Thoat                      **\n");
 		printf("************************************\n");
 		fflush(stdin);
-		printf("\n \t\t   AN PHIM CHON: ");
+		printf("\n \t\tAN PHIM CHON: ");
 		scanf("%d",&key);
 		switch(key)
-        {
+              {
            	  case 1:
 					fflush(stdin);
 					nhap(S1);
@@ -48,15 +48,15 @@ int main()
 					getch();
 					break;
 			  case 3:
-					printf("\nBam phim bat ky de tiep tuc!");
+			  		fflush(stdin);
 					nhap(S2);
-					xuat(S2);
 					noichuoi(S1,S2,S3);
+					printf("\nBam phim bat ky de tiep tuc!");
 					getch();
 					break;
 		      case 4:
 		      	 	dx(S1);
- 					printf("\nBam phim bat ky de tiep tuc!");
+ 					printf("\n\nBam phim bat ky de tiep tuc!");
  					getch();
 					break;
 			  case 5:
@@ -71,19 +71,17 @@ int main()
 					printf("\nBam phim bat ky de tiep tuc!");
 					getch();
 					break;
-		}
-   	}
+		      }
+   	  }
 }
 
 
 
 
 
-void nhap(char S1[50], char S2[50])//1
+void nhap(char S[50])//1
 {
-	 printf("Nhap chuoi S1 :\n\n"); gets(S1);
-	 printf("\n\n");
-	 printf("Nhap chuoi S2 :\n\n"); gets(S2);
+	 printf("Nhap chuoi :\n\n"); gets(S);
 }
 
 void inhoa(char S[100])
@@ -98,10 +96,10 @@ void inhoa(char S[100])
 	 }
 }
 
-void xuat(char S1[50], char S2[50])//2
+void xuat(char S1[50])//2
 {
 	 int i;
-	 printf("\n\nXuat chuoi chuan S1 :\n\n");
+	 printf("\n\nXuat chuoi chuan :\n\n");
 	 for (i=0;i<strlen(S1);i++)
 	 {
 	 	 if (S1[0]==' ')
@@ -134,40 +132,7 @@ void xuat(char S1[50], char S2[50])//2
 	 strlwr(S1);
 	 inhoa(S1);
 	 puts(S1);
-	 
-	 printf("\n\nXuat chuoi chuan S2 :\n\n");
-	 for (i=0;i<strlen(S2);i++)
-	 {
-	 	 if (S2[0]==' ')
-	 	 {
-	 	 	for (int j=i;j<strlen(S2);j++)
-	 	 	{
-	 	 		S2[j]=S2[j+1];
-	 	 	}
-	 	 i--;
-	 	 }
-     }
-     for (i=0;i<strlen(S2);i++)
-     {
-	 	 if (S2[i]==' ' && S2[i+1]==' ')
-	 	 {
-	 	 	for (int j=i;j<strlen(S2);j++)
-	 	 	{
-	 	 		S2[j]=S2[j+1];
-	 	 	}
-	 	 i--;
-		 }
-	 }
-	 for (i=0;i<strlen(S2);i++)
-	 {
-	 	 if (S2[strlen(S2)-1]==' ')
-	 	 {
-	 	 	S2[strlen(S2)-1]='\0';
-	     }
-     }
-	 strlwr(S2);
-	 inhoa(S2);
-	 puts(S2);
+
 }
 
 
@@ -225,8 +190,8 @@ void dx(char S1[50])
 	 	    } 
 	    }
      }
-	 if (check==0) printf("\n\nChuoi S la chuoi khong doi xung !");
-	 else          printf("\n\nChuoi S la chuoi doi xung !");
+	 if (check==0) printf("\n\nChuoi la chuoi khong doi xung !");
+	 else          printf("\n\nChuoi la chuoi doi xung !");
 	 inhoa(S1);
 }
 
@@ -238,7 +203,7 @@ void dao(char S1[50])
 	 {
 	 	 Nguoc[i]=S1[strlen(S1)-1-i];
 	 }
-	 printf("\n\nChuoi nguoc cua S1 la :\n\n"); puts(Nguoc);
+	 printf("\n\nChuoi nguoc cua chuoi la :\n\n"); puts(Nguoc);
 }
 
 
