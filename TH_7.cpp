@@ -137,7 +137,7 @@ void swap(int *x, int *y)
 }
 void sx(int *a, int n)//8.Sap xep mang tu be den lon
 {
-	int tam;
+	 int tam;
      for (int i=0;i<n;i++)
 	 {
 	 	 for (int j=i+1;j<n;j++)
