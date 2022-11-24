@@ -22,6 +22,10 @@ int main()//1.Ham main dung de nhap va thuc hien cac ham con
 	int n;
 	a=(int*)calloc(256,sizeof(int));//Khai bao bo nho cho con tro a
 	printf("Nhap n tu ban phim : n = "); scanf("%d",&n);
+	while (n<1)
+	{
+		  printf("Nhap sai roi ! Nhap lai n tu ban phim : n = "); scanf("%d",&n);
+	}
 	nhap    (a,n);//2.Nhap mang
 	xuat	(a,n);//3.Xuat mang
 	max		(a,n);//4.Tim GTLN
@@ -29,6 +33,7 @@ int main()//1.Ham main dung de nhap va thuc hien cac ham con
 	dsnt  	(a,n);//6.Dem va tinh tong cac so nguyen to trong mang
 	timx	(a,n);//7.Tim su ton tai cua x trong mang
 	sx		(a,n);//8.Sap xep mang tu be den lon
+	printf("Nhan phim bat ky de ket thuc !");
 }
 
 

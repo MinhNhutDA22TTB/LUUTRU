@@ -10,35 +10,33 @@ void snt		(int *a, int n);
 void timx		(int *a, int n);
 void tongdcc	(int *a, int n);
 void chan 		(int *a, int n);
-void avb  		(int *A, int *B, int *C, int m, int n1);
+void avb  		(int *A, int *B, int *C, int M, int N);
 
 void *calloc	(size_t nitems,size_t size);
 
-int main()
+int main()//1
 {
-	int n,*a,m,n1;
+	int n,*a,M,N;
 	int *A,*B,*C;
 	a=(int*)calloc(256,sizeof(int));
 	A=(int*)calloc(256,sizeof(int));
 	B=(int*)calloc(256,sizeof(int));
 	C=(int*)calloc(256,sizeof(int));
 	printf("Nhap n la so dong & cot cho ma tran U : n="); scanf("%d",&n);
-	nhap(a,n);
-	xuat(a,n);
-	max(a,n);
-	min(a,n);
-	snt(a,n);
-	timx(a,n);
-	tongdcc(a,n);
-	chan(a,n);
+	nhap(a,n);//2
+	xuat(a,n);//3
+	max(a,n);//4
+	min(a,n);//5
+	snt(a,n);//6
+	timx(a,n);//7
+	tongdcc(a,n);//8
+	chan(a,n);//9
 	printf("\n\n\n\n\n\n\n");
-	printf("\n\n                        XAY DUNG MA TRAN A & B VA TINH TONG TICH CUA A & B                   \n\n\n");
-	printf("\n\nNhap m la so dong cho A & B : m = "); scanf("%d",&m);
-	printf("\n\nNhap n la so cot cho A & B : n = ");  scanf("%d",&n1);
-	avb(A,B,C,m,n1);
-	scanf("%d",&n);
-	
-
+	printf("\n\n                                XAY DUNG MA TRAN A & B VA TINH TONG TICH CUA A & B                   \n\n\n");
+	printf("\n\nNhap m la so dong cho A & B : m = "); scanf("%d",&M);
+	printf("\n\nNhap n la so cot cho A & B : n = ");  scanf("%d",&N);
+	avb(A,B,C,M,N);//10
+	printf("\n\nNhan phim bat ky de ket thuc !"):
 }
 
 
@@ -195,103 +193,93 @@ void chan(int *a,int n)
 }
 
 
-void avb(int *A, int *B, int *C, int m, int n1)
+void avb(int *A, int *B, int *C, int M, int N)
 {
 	 printf("\n\nNhap ma tran A :");
-	 for (int i=0;i<m;i++)
+	 for (int i=0;i<M;i++)
 	 {
-	 	 for (int j=0;j<n1;j++)
+	 	 for (int j=0;j<N;j++)
 	 	 {
-	 	 	 printf("\n\nA[%d][%d]=",i,j); scanf("%d",A+i*n1+j);
+	 	 	 printf("\n\nA[%d][%d]=",i,j); scanf("%d",A+i*N+j);
 	 	 }
 	 }
 	 
 	 printf("\n\nNhap ma tran B :");
-	 for (int i=0;i<m;i++)
+	 for (int i=0;i<M;i++)
 	 {
-	 	 for (int j=0;j<n1;j++)
+	 	 for (int j=0;j<N;j++)
 	 	 {
-	 	 	 printf("\n\nB[%d][%d]=",i,j); scanf("%d", B+i*n1+j);
+	 	 	 printf("\n\nB[%d][%d]=",i,j); scanf("%d", B+i*N+j);
 	 	 }
 	 }
 	 
 	 printf("\n\nMa tran A :\n\n");
-	  for (int i=0;i<m;i++)
+	  for (int i=0;i<M;i++)
 	 {
-	 	 for (int j=0;j<n1;j++)
+	 	 for (int j=0;j<N;j++)
 	 	 {
-	 	 	 printf("%d  ",*(A+i*n1+j));
+	 	 	 printf("%d  ",*(A+i*N+j));
 	 	 }
 	 	 printf("\n\n");
 	 }
 	 
 	 printf("\n\nMa tran B :\n\n");
-	  for (int i=0;i<m;i++)
+	  for (int i=0;i<M;i++)
 	 {
-	 	 for (int j=0;j<n1;j++)
+	 	 for (int j=0;j<N;j++)
 	 	 {
-	 	 	 printf("%d  ",*(B+i*n1+j));
+	 	 	 printf("%d  ",*(B+i*N+j));
 	 	 }
 	 	 printf("\n\n");
 	 }
 	 
-	 for (int i=0;i<m;i++)
+	 for (int i=0;i<M;i++)
 	 {
-	 	 for (int j=0;j<n1;j++)
+	 	 for (int j=0;j<N;j++)
 	 	 {
-	 	 	 *(C+i*n1+j)=*(A+i*n1+j)+*(B+i*n1+j);
+	 	 	 *(C+i*N+j)=*(A+i*N+j)+*(B+i*N+j);
 	 	 }
 	 }
 	 printf("\n\nTong hai ma tran A & B la :\n\n");
-	 for (int i=0;i<m;i++)
+	 for (int i=0;i<M;i++)
 	 {
-	 	 for (int j=0;j<n1;j++)
+	 	 for (int j=0;j<N;j++)
 	 	 {
-	 	 	 printf("%d  ",*(C+i*n1+j));
+	 	 	 printf("%d  ",*(C+i*N+j));
 	 	 }
 	 	 printf("\n\n");
 	 }
 	 
-	 if (m!=n1) printf("\n\nKhong the tinh tich hai ma tran A va B do so dong cua ma tran A khong bang so cot cua ma tran B !");
+	 if (M!=N) printf("\n\nKhong the tinh tich hai ma tran A va B do so dong cua ma tran A khong bang so cot cua ma tran B !");
 	 else
 	 {
-	 	 for (int i=0;i<m;i++)
+	 	 for (int a=0;a<M;a++)
 	 	 {
-	 	 	 for (int j=0;j<n1;j++)
+	 	 	 for (int b=0;b<N;b++)
 	 	 	 {
-	 	 	 	 *(C+i*n1+j)=1;
+	 	 	 	 *(C+a*N+b)=0;
 	 	 	 }
 	 	 }
-	 	 
-	 	 for (int i=0;i<m;i++)
+	 	 for (int i=0;i<M;i++)
 	 	 {
-	 	 	 for (int j=0;j<n1;j++)
+	 	 	 for (int j=0;j<N;j++)
 	 	 	 {
-	 	 	 	 *(C+i*n1+j)=*(A+i*n1+j)+*(B+i*n1+j);
+	 	 	 	 for (int k=0;k<N;k++)
+	 	 	 	 {
+	 	 	 	 	 *(C+i*N+j)= *(C+i*N+j)+  (*(A+i*N+k) * *(B+k*N+j));
+	 	 	 	 }
 	 	 	 }
 	 	 }
-	 	 
-	 	 for (int i=0;i<m;i++)
+	 	 printf("\n\nGoi tich hai ma tran A & B la mot ma tran C. C la :\n\n");
+	 	 for (int i=0;i<M;i++)
 	 	 {
-	 	 	 for (int j=0;j<n1;j++)
+	 	 	 for (int j=0;j<N;j++)
 	 	 	 {
-	 	 	 	 *(C+i*n1+j)=*(A+i*n1+)+*(B+i*n1+j);
+	 	 	 	 printf("%d  ",*(C+i*N+j));
 	 	 	 }
+	 	 	 printf("\n\n");
 	 	 }
 	 	 
-	 	 
-	 	
-	 	
-	 	
-	 	
-	 	
-	 	
-	 	
-	 	
-	 	
-	 	
-	 	
-	 	
 	 }
 }
 
