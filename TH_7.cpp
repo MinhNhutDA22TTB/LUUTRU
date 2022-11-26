@@ -10,9 +10,6 @@ void timx		(int *a, int n);
 void swap		(int *x, int *y);
 void sx			(int *a, int n);
 
-
-
-
 void *calloc	(size_t nitems,size_t size);
 
 

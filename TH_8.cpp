@@ -8,35 +8,39 @@ void min		(int *a, int n);
 int  check 		(int x);
 void snt		(int *a, int n);
 void timx		(int *a, int n);
+void swap  		(int *x, int *y);
+void sx 		(int *a, int n);
 void tongdcc	(int *a, int n);
 void chan 		(int *a, int n);
 void avb  		(int *A, int *B, int *C, int M, int N);
 
 void *calloc	(size_t nitems,size_t size);
 
-int main()//1
+int main()//1.Ham main de goi & thuc thi cac ham con
 {
-	int n,*a,M,N;
-	int *A,*B,*C;
+	int n,M,N;
+	int *a,*b,*A,*B,*C;
 	a=(int*)calloc(256,sizeof(int));
+	b=(int*)calloc(256,sizeof(int));
 	A=(int*)calloc(256,sizeof(int));
 	B=(int*)calloc(256,sizeof(int));
 	C=(int*)calloc(256,sizeof(int));
 	printf("Nhap n la so dong & cot cho ma tran U : n="); scanf("%d",&n);
-	nhap(a,n);//2
-	xuat(a,n);//3
-	max(a,n);//4
-	min(a,n);//5
-	snt(a,n);//6
-	timx(a,n);//7
-	tongdcc(a,n);//8
-	chan(a,n);//9
+	nhap(a,n);//2.Nhap ma tran U
+	xuat(a,n);//3.Xuat ma tran U
+	max(a,n);//4.1.Tim GTLN trong ma tran U
+	min(a,n);//4.2.Tim GTNN trong ma tran U
+	snt(a,n);//5.Dem cac gia tri la so nguyen to va tinh tong chung trong ma tran U
+	timx(a,n);///6.Tim su ton tai cua gia tri x trong ma tran U
+	sx(a,n);//7.Sap xep ma tran U tang dan tu trai>phai & tren>xuong
+	tongdcc(a,n);//8.Tinh tong cac phan tu nam tren duong cheo chinh cua ma tran U
+	chan(a,n);//9.Dem cac phan tu la so chan trong tam giac tren cua duong cheo chinh ( khong ke duong cheo chinh )
 	printf("\n\n\n\n\n\n\n");
 	printf("\n\n                                XAY DUNG MA TRAN A & B VA TINH TONG TICH CUA A & B                   \n\n\n");
 	printf("\n\nNhap m la so dong cho A & B : m = "); scanf("%d",&M);
 	printf("\n\nNhap n la so cot cho A & B : n = ");  scanf("%d",&N);
-	avb(A,B,C,M,N);//10
-	printf("\n\nNhan phim bat ky de ket thuc !"):
+	avb(A,B,C,M,N);//10.Nhap hai ma tran A&B. Tinh tong & tinh cua A&B
+	printf("\n\nNhan phim bat ky de ket thuc !");
 }
 
 
@@ -71,7 +75,7 @@ void xuat(int *a, int n)
 
 void max(int *a, int n)
 {
-	 int max=*(a);
+	 int max=*(a+0*n+0);
 	 for (int i=0;i<n;i++)
 	 {
 	 	 for (int j=0;j<n;j++)
@@ -100,7 +104,7 @@ void min(int *a, int n)
 int check(int x)
 {
 	int OK=1;
-	if (x<2)
+	if  (x<2)
 	{
 		OK=0;
 	}
@@ -156,6 +160,55 @@ void timx(int *a, int n)
 	 }
 	 if (OK==0) printf("\n\nx khong xuat hien trong ma tran U !");
 }
+
+
+void swap(int *x, int *y )
+{
+	 int tam;
+	 tam=*x;
+	 *x=*y;
+	 *y=tam;
+}
+
+void sx(int *a, int n)
+{
+     for (int i=0;i<n;i++)
+     {
+     	  for (int j=0;j<n;j++)
+     	  {
+     	  	  for (int k=j+1;k<n;k++)
+     	  	  {
+     	  	  	  if ( *(a+j*n+i)>=*(a+k*n+i))
+     	  	  	  {
+     	  	  	  	 swap (a+j*n+i, a+k*n+i);
+     	  	  	  }
+     	  	  }
+     	  }
+     }
+     for (int i=0;i<n;i++)
+     {
+     	  for (int j=0;j<n;j++)
+     	  {
+     	  	  for (int k=j+1;k<n;k++)
+     	  	  {
+     	  	  	  if ( *(a+i*n+j)>=*(a+i*n+k))
+     	  	  	  {
+     	  	  	  	 swap (a+i*n+j, a+i*n+k);
+     	  	      }
+     	  	  }
+     	  }
+     }
+     printf("\n\nMang U sau khi sap xep :\n\n");
+     for (int i=0;i<n;i++)
+     {
+     	 for (int j=0;j<n;j++)
+     	 {
+     	 	 printf("%d  ",*(a+i*n+j));
+     	 }
+      	 printf("\n\n");
+     }
+}
+
 
 
 void tongdcc(int *a, int n)
